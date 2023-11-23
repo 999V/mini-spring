@@ -11,6 +11,20 @@
 - 注册：在 BeanFactory 类中，定义一个Map<String, BeanDefinition>类型的 map 容器，用于存放bean的定义
 - 获取：在 BeanFactory 类中，定义一个getBean(String name)方法，用于获取bean实例
 
+### 模块结构
+```css
+main
+  ├── java
+  │   └── org
+  │       └── springframework
+  │           └── beans
+  │               └── factory
+  │                   ├── BeanFactory.java
+  │                   └── config
+  │                       └── BeanDefinition.java
+  └── resources
+```
+
 ### 核心合代码示例
 ```java
 public void testBeanFactory() {
