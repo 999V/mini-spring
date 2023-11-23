@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="120 seconds">
+
+    <conversionRule conversionWord="reqId" converterClass="com.hellobike.finance.base.track.ReqIdConverter"/>
+
+    <property name="LOG_HOME" value="logs"/>
+    <property name="MAX_FILE_SIZE" value="50MB"/>
+    <property name="MAX_HISTORY" value="10"/>
+
+    <property name="FORMAT_PATTERN" value="[owl][%d{yyyy-MM-dd HH:mm:ss.SSS}][%p][%t][%c{1}][%X{traceId},%X{spanId},%X{parentSpanId}] - %msg[%reqId]%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${FORMAT_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/hlog-stdout.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/stdout.%d{HHmmss}.%i.log</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+        <encoder><pattern>${FORMAT_PATTERN}</pattern></encoder>
+    </appender>
+
+
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter"><level>error</level></filter>
+        <file>${LOG_HOME}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/error.%d{HHmmss}.%i.log</fileNamePattern>
+            <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+            <maxHistory>${MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
+        <encoder><pattern>${FORMAT_PATTERN}</pattern></encoder>
+    </appender>
+
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="error" />
+    </root>
+</configuration>
