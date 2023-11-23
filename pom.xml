@@ -17,8 +17,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>chapter-1-bean-container</module>
         <module>common</module>
+        <module>chapter-1-bean-container</module>
+        <module>chapter-2-registry</module>
     </modules>
 
     <dependencies>

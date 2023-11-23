@@ -11,7 +11,7 @@
 - 注册：在 BeanFactory 类中，定义一个Map<String, BeanDefinition>类型的 map 容器，用于存放bean的定义
 - 获取：在 BeanFactory 类中，定义一个getBean(String name)方法，用于获取bean实例
 
-### 模块结构
+### 工程结构
 ```css
 main
   ├── java
@@ -46,4 +46,53 @@ public void testBeanFactory() {
      
      Assert.assertNotNull(users);
  }
+```
+
+
+## 第二章、实现bean的定义，注册，获取
+
+![img.png](doc/images/img1.png)
+
+### 工程结构
+```css
+
+main
+├── java
+│   └── org
+│       └── springframework
+│           └── beans
+│               └── factory
+│                   ├── BeanFactory.java
+│                   ├── config
+│                   │   ├── BeanDefinition.java
+│                   │   └── SingletonBeanRegistry.java
+│                   └── support
+│                       ├── AbstractAutowireCapableBeanFactory.java
+│                       ├── AbstractBeanFactory.java
+│                       ├── BeanDefinitionRegistry.java
+│                       ├── DefaultListableBeanFactory.java
+│                       └── DefaultSingletonBeanRegistry.java
+└── resources
+
+```
+### 核心合代码示例
+```java
+public void test() {
+    // 1.定义 BeanDefinition
+    BeanDefinition beanDefinition = new BeanDefinition(UserServiceImpl.class);
+    
+    // 2.定义 BeanFactory
+    DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    
+    // 3.注册 BeanDefinition
+    beanFactory.registerBeanDefinition("userService", beanDefinition);
+    
+    // 4.获取 Bean
+    UserService userService = (UserService) beanFactory.getBean("userService");
+    Assert.assertNotNull(userService);
+    
+    // 5.执行 Bean 方法
+    List<User> users = userService.listUser();
+    Assert.assertNotNull(users);
+}
 ```
