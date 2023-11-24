@@ -62,16 +62,16 @@ main
 │       └── springframework
 │           └── beans
 │               └── factory
-│                   ├── BeanFactory.java
+│                   ├── BeanFactory.java 定义getBean方法，用于获取bean实例
 │                   ├── config
-│                   │   ├── BeanDefinition.java
-│                   │   └── SingletonBeanRegistry.java
+│                   │   ├── BeanDefinition.java bean定义，包装bean实例
+│                   │   └── SingletonBeanRegistry.java 单例注册接口，定义getSingleton方法，通过beanName获取bean实例
 │                   └── support
-│                       ├── AbstractAutowireCapableBeanFactory.java
-│                       ├── AbstractBeanFactory.java
-│                       ├── BeanDefinitionRegistry.java
-│                       ├── DefaultListableBeanFactory.java
-│                       └── DefaultSingletonBeanRegistry.java
+│                       ├── AbstractAutowireCapableBeanFactory.java 继承AbstractBeanFactory类，实现根据beanDefiniiton创建bean的createBean方法
+│                       ├── AbstractBeanFactory.java 实现BeanFactory接口，实现getBean方法，用于获取bean实例；继承DefaultSingletonBeanRegistry类，继承获取和注册单例bean实例的能力
+│                       ├── BeanDefinitionRegistry.java bean定义注册接口，定义registerBeanDefinition方法，用于注册bean定义
+│                       ├── DefaultListableBeanFactory.java 定义beanDefinitionMap属性，用于存放bean定义，实现注册和获取 beanDefinition 的能力
+│                       └── DefaultSingletonBeanRegistry.java 实现SingletonBeanRegistry接口，定义singletonObjects属性，用于存放单例bean实例，新增addSingleton方法，用于注册单例bean实例
 └── resources
 
 ```

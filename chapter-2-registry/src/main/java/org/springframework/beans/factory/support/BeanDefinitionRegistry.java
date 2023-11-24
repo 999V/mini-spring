@@ -16,6 +16,7 @@ public interface BeanDefinitionRegistry {
      *
      * @param beanName       bean名字
      * @param beanDefinition bean定义
+     * @throws BeanDefinitionStoreException bean定义异常
      */
     void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) throws BeanDefinitionStoreException;
 
