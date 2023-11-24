@@ -96,3 +96,6 @@ public void test() {
     Assert.assertNotNull(users);
 }
 ```
+
+### UML类图
+![img.png](doc/images/spring-chapter-2-UML.png)
