@@ -75,6 +75,11 @@ main
 └── resources
 
 ```
+
+
+### UML类图
+![img.png](doc/images/spring-chapter-2-UML.png)
+
 ### 核心合代码示例
 ```java
 public void test() {
@@ -96,6 +101,3 @@ public void test() {
     Assert.assertNotNull(users);
 }
 ```
-
-### UML类图
-![img.png](doc/images/spring-chapter-2-UML.png)
