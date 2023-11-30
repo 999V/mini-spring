@@ -18,5 +18,4 @@ public interface UserService {
      * @return {@code List<User> }
      */
     List<User> listUser();
-
 }

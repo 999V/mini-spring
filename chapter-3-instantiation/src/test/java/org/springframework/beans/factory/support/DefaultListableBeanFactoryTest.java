@@ -23,7 +23,7 @@ public class DefaultListableBeanFactoryTest {
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 4.获取 Bean
-        UserService userService = (UserService) beanFactory.getBean("userService");
+        UserService userService = (UserService) beanFactory.getBean("userService", "userConfigName", "value", "1");
         Assert.assertNotNull(userService);
 
         // 5.执行 Bean 方法

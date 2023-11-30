@@ -20,6 +20,7 @@
         <module>common</module>
         <module>chapter-1-bean-container</module>
         <module>chapter-2-registry</module>
+        <module>chapter-3-instantiation</module>
     </modules>
 
     <dependencies>
