@@ -21,7 +21,7 @@
         <module>chapter-1-bean-container</module>
         <module>chapter-2-registry</module>
         <module>chapter-3-instantiation</module>
-        <module>chapter-5</module>
+        <module>chapter-5-resource-loader</module>
         <module>chapter-4</module>
     </modules>
 
