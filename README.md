@@ -101,3 +101,28 @@ public void test() {
     Assert.assertNotNull(users);
 }
 ```
+
+## 第三章、实例化策略
+
+### 工程结构
+```css
+├── java
+│   └── org
+│       └── springframework
+│           └── beans
+│               └── factory
+│                   ├── BeanFactory.java
+│                   ├── config
+│                   │   ├── BeanDefinition.java
+│                   │   └── SingletonBeanRegistry.java
+│                   └── support
+│                       ├── AbstractAutowireCapableBeanFactory.java
+│                       ├── AbstractBeanFactory.java
+│                       ├── BeanDefinitionRegistry.java
+│                       ├── CglibSubclassingInstantiationStrategy.java
+│                       ├── DefaultListableBeanFactory.java
+│                       ├── DefaultSingletonBeanRegistry.java
+│                       ├── InstantiationStrategy.java
+│                       └── SimpleInstantiationStrategy.java
+└── resources
+```
