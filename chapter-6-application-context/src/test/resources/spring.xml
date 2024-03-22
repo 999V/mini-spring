@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="userRepository" class="org.spring.common.repository.UserRepository"/>
+
+    <bean id="userService" class="org.spring.common.service.impl.UserServiceImpl">
+        <property name="configName" value="10001"/>
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.support.MyBeanPostProcessor"/>
+    <bean class="org.springframework.beans.factory.support.MyBeanFactoryPostProcessor"/>
+
+</beans>

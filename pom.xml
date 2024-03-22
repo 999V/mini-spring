@@ -23,6 +23,7 @@
         <module>chapter-3-instantiation</module>
         <module>chapter-5-resource-loader</module>
         <module>chapter-4</module>
+        <module>chapter-6-application-context</module>
     </modules>
 
     <dependencies>
